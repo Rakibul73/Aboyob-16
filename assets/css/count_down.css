@@ -1,0 +1,335 @@
+/* ============================ DropsCount CSS ============================ */
+@import url("http://fonts.googleapis.com/css?family=Great+Vibes");
+/* ============================ START CSS RESET AND OPTIONS ============================ */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  vertical-align: top;
+  text-decoration: none;
+  outline: none;
+}
+.clear {
+  clear: both;
+}
+body {
+  background: #373535;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 45px;
+  color: #fff;
+  text-shadow: 1px 1px 0px #1d1919;
+  font-weight: 400;
+  margin-bottom: 60px;
+  text-align: center;
+  line-height: 1.4em;
+}
+h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 1px 1px 0px #1d1919;
+}
+p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #7c7777;
+  text-shadow: 1px 1px 0px #1d1919;
+}
+.separate {
+  margin-bottom: 120px;
+}
+.working {
+  background: url(./images/working_bg.png) no-repeat;
+  width: 168px;
+  height: 130px;
+  margin: -30px auto 60px;
+}
+.container .sidebar {
+  float: left;
+  margin-right: 80px;
+  width: 250px;
+  padding-top: 50px;
+}
+.container .sidebar .arrow {
+  background: url(./images/arrow.png) no-repeat;
+  width: 88px;
+  height: 73px;
+  position: absolute;
+  margin-left: 260px;
+  margin-top: -75px;
+}
+#site_change {
+  position: absolute;
+  background: #2a2727;
+  padding: 40px;
+  margin-top: 300px;
+  width: 70px;
+}
+#site_change #site_open {
+  position: absolute;
+  cursor: pointer;
+  background: url(./images/opener.png);
+  width: 33px;
+  height: 33px;
+  margin-left: 109px;
+  margin-top: 46px;
+}
+#site_change a {
+  float: left;
+  margin: 10px;
+}
+.container {
+  width: 960px;
+  margin: 0px auto;
+}
+.container .sidebar .subscription {
+  color: #7c7777;
+  margin-bottom: 70px;
+  font-size: 13px;
+}
+.container .sidebar .subscription .subscription_form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ffd9ca;
+  text-shadow: 1px 1px 0px #7d3030;
+}
+.container .sidebar .subscription .border {
+  background: #242121;
+  float: left;
+  padding: 4px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.container .sidebar .subscription .border .subscription_line {
+  background: #fff;
+  padding: 6px 8px;
+  width: 150px;
+  border-radius: 3px;
+}
+.container .sidebar .subscription .subscription_button {
+  padding: 10px 8px;
+  color: #fff;
+  background: #2c2929;
+  text-shadow: 1px 1px 0px #333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.container .sidebar .twitt {
+  position: absolute;
+  width: 210px;
+  background: #272323;
+  padding: 15px;
+  line-height: 1.4em;
+  font-size: 12px;
+  color: #fff;
+  border: 3px solid #656565;
+  border-radius: 6px;
+}
+.container .sidebar .twitt span {
+  display: block;
+}
+.container .sidebar .twitt .arrow_twitt {
+  background: url(./images/arrow_twitt.png);
+  height: 12px;
+  width: 18px;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: -3px;
+}
+.container .sidebar .twitt a {
+  color: #4f4b4b;
+}
+.container .sidebar .twitt a:hover {
+  text-decoration: underline;
+}
+.wt_twitter_post {
+  display: none;
+}
+.wt_twitter_post_date {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-top: 3px;
+}
+.container .sidebar .social {
+  min-height: 180px;
+  background: url(./images/border.png) repeat-y 20px 0px;
+}
+.container .sidebar .social .social_icons {
+  position: absolute;
+  margin: 155px 0px 0px 0px;
+  padding: 0px;
+}
+.container .sidebar .social .social_icons li {
+  list-style: none;
+  float: left;
+  margin-right: 15px;
+}
+.container .sidebar .social .social_icons li a {
+  background: url(./images/socials.png) no-repeat;
+  display: block;
+  width: 47px;
+  height: 47px;
+}
+.container .sidebar .social .social_icons li a.twitter {
+  background-position: 0px -47px;
+}
+.container .sidebar .social .social_icons li a:hover.twitter,
+.container .sidebar .social .social_icons li a.twitter.active {
+  background-position: 0px 0px;
+}
+.container .sidebar .social .social_icons li a.facebook {
+  background-position: -62px -47px;
+}
+.container .sidebar .social .social_icons li a:hover.facebook {
+  background-position: -62px 0px;
+}
+.container .sidebar .social .social_icons li a.flikr {
+  background-position: -124px -47px;
+}
+.container .sidebar .social .social_icons li a:hover.flikr {
+  background-position: -124px -0px;
+}
+.container .sidebar .social .social_icons li a.google {
+  background-position: -186px -47px;
+}
+.container .sidebar .social .social_icons li a:hover.google {
+  background-position: -186px 0px;
+}
+.container .content {
+  float: left;
+  width: 630px;
+}
+.container .content .top_line {
+  background: #1d1919;
+  height: 28px;
+}
+.container .content .top_head {
+  background: url(./images/top_head.jpg) no-repeat top center;
+  height: 150px;
+}
+.container .content .bottle_box {
+  height: 625px;
+  width: 470px;
+  margin: 0px auto;
+}
+.container .content .bottle_box .bottle {
+  float: left;
+  width: 80px;
+  margin-right: 50px;
+}
+.container .content .bottle_box .bottle_last {
+  float: left;
+  width: 80px;
+  margin-right: 0px;
+}
+.container .content .bottle_box .bottle_section {
+  height: 504px;
+  margin-bottom: 40px;
+}
+.container .content .bottle_box .bottle_section .drop {
+  background: url(./images/drop_all.png) no-repeat;
+  width: 28px;
+  height: 40px;
+  margin-left: 20px;
+  position: absolute;
+  z-index: 1;
+}
+.container .content .bottle_box .bottle_section .drop_d {
+  background-position: 0px 0px;
+}
+.container .content .bottle_box .bottle_section .drop_h {
+  background-position: -130px 0px;
+}
+.container .content .bottle_box .bottle_section .drop_m {
+  background-position: -260px 0px;
+}
+.container .content .bottle_box .bottle_section .drop_s {
+  background-position: -390px 0px;
+}
+.container .content .bottle_box .bottle_counter {
+  background: url(./images/count_all.png) no-repeat;
+  font-size: 29px;
+  color: #fff;
+  font-weight: bold;
+  padding: 28px 0px;
+  text-align: center;
+  line-height: 1em;
+  margin-bottom: 110px;
+}
+.container .content .bottle_box .bottle_counter.bottle_d {
+  background-position: 0px 0px;
+}
+.container .content .bottle_box .bottle_counter.bottle_h {
+  background-position: -130px 0px;
+}
+.container .content .bottle_box .bottle_counter.bottle_m {
+  background-position: -260px 0px;
+}
+.container .content .bottle_box .bottle_counter.bottle_s {
+  background-position: -390px 0px;
+}
+.container .content .bottle_box .bottle_section .bottle_bg {
+  position: absolute;
+  z-index: 4;
+  height: 400px;
+  margin-top: 105px;
+  width: 80px;
+  background: url(./images/bottle_bg.png) no-repeat;
+}
+.container .content .bottle_box .bottle_section .overflow {
+  overflow: hidden;
+  height: 500px;
+  position: absolute;
+  width: 70px;
+  margin-left: 5px;
+  z-index: 3;
+}
+.container .content .bottle_box .bottle_section .fill {
+  z-index: 4;
+  position: absolute;
+  width: 70px;
+  height: 400px;
+  margin-top: 500px;
+}
+.container .content .bottle_box .bottle_section .fill.fill_d {
+  background: url(./images/days_bg.png);
+}
+.container .content .bottle_box .bottle_section .fill.fill_h {
+  background: url(./images/hours_bg.png);
+}
+.container .content .bottle_box .bottle_section .fill.fill_m {
+  background: url(./images/minutes_bg.png);
+}
+.container .content .bottle_box .bottle_section .fill.fill_s {
+  background: url(./images/seconds_bg.png);
+}
+#footer {
+  padding: 20px 0px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-shadow: 1px 1px 0px #111;
+  background: #1d1919;
+}
+/* ============================ START TITLE CSS EFFECT ============================ */
+span.show-tooltip-text {
+  z-index: 99999;
+  display: none;
+  position: fixed;
+  background: #272323;
+  border: 2px solid #656565;
+  margin: 0px 10px 0px 0px;
+  padding: 2px 12px;
+  color: #fff;
+  border-radius: 3px;
+  font: 13px/22px;
+  font-weight: normal;
+}
+/* ============================ END TITLE CSS EFFECT ============================ */

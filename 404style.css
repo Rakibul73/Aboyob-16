@@ -1,0 +1,364 @@
+:root {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+::-moz-selection {
+  color: #11111b;
+  background-color: #c0dc67;
+}
+
+::selection {
+  color: #11111b;
+  background-color: #c0dc67;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #11111b;
+  color: cyan;
+  font-size: calc(6.4px + 0.8125vw);
+}
+
+.error-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.error-body:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: cyan;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+.error-body:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #11111b 21px, transparent 1%) center, linear-gradient(#11111b 21px, transparent 1%) center, white;
+  background-size: 22px 22px;
+  background-position: center;
+  opacity: .2;
+  z-index: 1;
+}
+.error-body .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  mix-blend-mode: luminosity;
+}
+.error-body .message {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 3;
+}
+.error-body .message h1 {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  font-size: 10em;
+  margin: 0;
+  -webkit-animation: shake 600ms ease-in-out infinite alternate;
+          animation: shake 600ms ease-in-out infinite alternate;
+  text-shadow: 0 0 0.07em #afd33d, -0.2em 0 2em rgba(0,255,255, 0.3), 0.2em 0 2em rgba(0,255,255, 0.3);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.error-body .message h1:before {
+  content: attr(t);
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0.34em);
+          transform: translate(-50%, 0.34em);
+  height: .1em;
+  line-height: .5em;
+  width: 100%;
+  -webkit-animation: scan 500ms ease-in-out infinite alternate 321ms, glitch-anim 300ms ease-in-out infinite alternate;
+          animation: scan 500ms ease-in-out infinite alternate 321ms, glitch-anim 300ms ease-in-out infinite alternate;
+  overflow: hidden;
+  opacity: .7;
+}
+.error-body .message h1:after {
+  content: attr(t);
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0.34em);
+          transform: translate(-50%, 0.34em);
+  height: .5em;
+  line-height: .1em;
+  width: 100%;
+  -webkit-animation: scan 665ms ease-in-out infinite alternate 52ms, glitch-anim 300ms ease-in-out infinite alternate;
+          animation: scan 665ms ease-in-out infinite alternate 52ms, glitch-anim 300ms ease-in-out infinite alternate;
+  overflow: hidden;
+  opacity: .8;
+}
+.error-body .message .bottom {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  width: 100%;
+}
+.error-body .message p, .error-body .message a {
+  font-size: 2em;
+  font-family: monospace;
+  text-shadow: 0 0 5px #afd33d;
+  -webkit-filter: blur(0.8px);
+          filter: blur(0.8px);
+}
+.error-body .message a {
+  position: relative;
+  color: cyan;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid #00ffff;
+  text-transform: uppercase;
+  padding: 5px 30px;
+  box-shadow: inset 0 0 0 0 rgba(0,255,255, 0.2);
+  -webkit-transition: 25ms ease-in-out all 0ms;
+  transition: 25ms ease-in-out all 0ms;
+  overflow: hidden;
+  -webkit-animation: attn 3s ease-in-out infinite;
+          animation: attn 3s ease-in-out infinite;
+}
+.error-body .message a:hover {
+  cursor: crosshair;
+  box-shadow: inset 0 -2em 0 0 rgba(0,255,255, 0.2);
+  -webkit-transition: 225ms ease-in-out all 225ms;
+  transition: 225ms ease-in-out all 225ms;
+  -webkit-animation: none;
+          animation: none;
+}
+.error-body .message a:hover:before, .error-body .message a:hover:after {
+  -webkit-transform: translate(-50%, 0) scale(0, 1);
+          transform: translate(-50%, 0) scale(0, 1);
+}
+.error-body .message a:active {
+  box-shadow: inset 0 -2em 0 0 rgba(0,255,255, 0.5);
+  -webkit-transition: 225ms ease-in-out all 225ms;
+  transition: 225ms ease-in-out all 225ms;
+}
+.error-body .message a:before, .error-body .message a:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0) scale(1, 1);
+          transform: translate(-50%, 0) scale(1, 1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background-color: cyan;
+  width: 90%;
+  height: 5px;
+  -webkit-transition: 225ms ease-in-out all;
+  transition: 225ms ease-in-out all;
+  mix-blend-mode: hard-light;
+}
+.error-body .message a:before {
+  top: -4px;
+}
+.error-body .message a:after {
+  bottom: -4px;
+}
+
+@-webkit-keyframes scan {
+  from , 20%, 100% {
+    height: 0;
+    -webkit-transform: translate(-50%, 0.44em);
+            transform: translate(-50%, 0.44em);
+  }
+  10%,15% {
+    height: 1em;
+    line-height: .2em;
+    -webkit-transform: translate(-55%, 0.14em);
+            transform: translate(-55%, 0.14em);
+  }
+}
+
+@keyframes scan {
+  from , 20%, 100% {
+    height: 0;
+    -webkit-transform: translate(-50%, 0.44em);
+            transform: translate(-50%, 0.44em);
+  }
+  10%,15% {
+    height: 1em;
+    line-height: .2em;
+    -webkit-transform: translate(-55%, 0.14em);
+            transform: translate(-55%, 0.14em);
+  }
+}
+@keyframe pulse {
+  from {
+    text-shadow: 0 0 0 #afd33d, 0 0 0 rgba(0,255,255, 0.3), 0 0 0 rgba(0,255,255, 0.3);
+  }
+
+  to {
+    text-shadow: 0 0 0.07em #afd33d, -0.2em 0 2em rgba(0,255,255, 0.3), 0.2em 0 2em rgba(0,255,255, 0.3);
+  }
+}
+@-webkit-keyframes attn {
+  0%, 100% {
+    opacity: 1;
+  }
+  30%, 35% {
+    opacity: .4;
+  }
+}
+@keyframes attn {
+  0%, 100% {
+    opacity: 1;
+  }
+  30%, 35% {
+    opacity: .4;
+  }
+}
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate(-1px, 0);
+            transform: translate(-1px, 0);
+  }
+  10% {
+    -webkit-transform: translate(2px, 1px);
+            transform: translate(2px, 1px);
+  }
+  30% {
+    -webkit-transform: translate(-3px, 2px);
+            transform: translate(-3px, 2px);
+  }
+  35% {
+    -webkit-transform: translate(2px, -3px);
+            transform: translate(2px, -3px);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  45% {
+    -webkit-transform: translate(2px, 2px) skewY(-8deg) scale(0.96, 1);
+            transform: translate(2px, 2px) skewY(-8deg) scale(0.96, 1);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 1px);
+            transform: translate(-3px, 1px);
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate(-1px, 0);
+            transform: translate(-1px, 0);
+  }
+  10% {
+    -webkit-transform: translate(2px, 1px);
+            transform: translate(2px, 1px);
+  }
+  30% {
+    -webkit-transform: translate(-3px, 2px);
+            transform: translate(-3px, 2px);
+  }
+  35% {
+    -webkit-transform: translate(2px, -3px);
+            transform: translate(2px, -3px);
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  45% {
+    -webkit-transform: translate(2px, 2px) skewY(-8deg) scale(0.96, 1);
+            transform: translate(2px, 2px) skewY(-8deg) scale(0.96, 1);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 1px);
+            transform: translate(-3px, 1px);
+  }
+}
+@-webkit-keyframes glitch-anim {
+  0% {
+    clip: rect(40px, 9999px, 67px, 0);
+  }
+  10% {
+    clip: rect(100px, 9999px, 4px, 0);
+  }
+  20% {
+    clip: rect(80px, 9999px, 24px, 0);
+  }
+  30% {
+    clip: rect(96px, 9999px, 26px, 0);
+  }
+  40% {
+    clip: rect(62px, 9999px, 3px, 0);
+  }
+  50% {
+    clip: rect(14px, 9999px, 95px, 0);
+  }
+  60% {
+    clip: rect(55px, 9999px, 43px, 0);
+  }
+  70% {
+    clip: rect(14px, 9999px, 7px, 0);
+  }
+  80% {
+    clip: rect(55px, 9999px, 33px, 0);
+  }
+  90% {
+    clip: rect(34px, 9999px, 18px, 0);
+  }
+  100% {
+    clip: rect(65px, 9999px, 65px, 0);
+  }
+}
+@keyframes glitch-anim {
+  0% {
+    clip: rect(40px, 9999px, 67px, 0);
+  }
+  10% {
+    clip: rect(100px, 9999px, 4px, 0);
+  }
+  20% {
+    clip: rect(80px, 9999px, 24px, 0);
+  }
+  30% {
+    clip: rect(96px, 9999px, 26px, 0);
+  }
+  40% {
+    clip: rect(62px, 9999px, 3px, 0);
+  }
+  50% {
+    clip: rect(14px, 9999px, 95px, 0);
+  }
+  60% {
+    clip: rect(55px, 9999px, 43px, 0);
+  }
+  70% {
+    clip: rect(14px, 9999px, 7px, 0);
+  }
+  80% {
+    clip: rect(55px, 9999px, 33px, 0);
+  }
+  90% {
+    clip: rect(34px, 9999px, 18px, 0);
+  }
+  100% {
+    clip: rect(65px, 9999px, 65px, 0);
+  }
+}
