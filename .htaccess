@@ -1,1 +1,8 @@
-ErrorDocument 404 /404error.html
+ErrorDocument 404 /404.html
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
